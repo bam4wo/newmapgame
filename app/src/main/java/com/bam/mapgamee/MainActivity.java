@@ -8,6 +8,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private View gameView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.arrow_up).setOnClickListener(this);
         findViewById(R.id.arrow_left).setOnClickListener(this);
         findViewById(R.id.arrow_right).setOnClickListener(this);
+        gameView = findViewById(R.id.game);
     }
 
     @Override
