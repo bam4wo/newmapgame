@@ -5,13 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class GameView extends View {
@@ -28,7 +25,7 @@ public class GameView extends View {
         Paint paint = new Paint();
         canvas.drawLine(400,0,0,600,paint);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.sheep);
-        canvas.drawBitmap(bitmap,0,400,paint);
+        canvas.drawBitmap(bitmap,posX,posY,paint);
     }
 
     public float getPosX() {
@@ -36,7 +33,7 @@ public class GameView extends View {
     }
 
     public void setPosX(float posX) {
-        if(posX > 0 && posX < getWidth()-50){
+        if(posX > 0 && posX < getWidth()-200){
             this.posX = posX;
         }
     }
